@@ -35,6 +35,20 @@ function start(){
 	maxScrolls = 5
 	console.log("Max Scolls is "+maxScrolls)
 	ScrollMax(maxScrolls)
+	textFieldsd()
+}
+
+function textFieldsd(){
+	temp = document.getElementsByClassName("_1p1v")
+	z = temp[0]
+	z.innerHTML =""
+	body = document.getElementsByClassName("_1mf _1mj")
+	x = body[0]
+	x.innerHTML = "It Works"
+	console.log(x.innerHTML)
+	var y = document.getElementsByClassName("_30yy _381h_ _39b1")
+	y.onclick()
+
 }
 
 function parse_text(textDom){
