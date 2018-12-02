@@ -2,7 +2,7 @@
   "name": "AutoMe",
   "version": "1.0",
   "description": "Responds when you're too lazy!",
-  "permissions": ["activeTab", "declarativeContent", "storage","http://*/*"],
+  "permissions": ["activeTab", "declarativeContent", "storage","http://*/*", "https://api.textrazor.com/", "chrome-extension://ioifnnhabdjeegldbejaonmdkbhdiofj/", "https://*/"],
   "background": {
     "scripts": ["background.js"],
     "persistent": false

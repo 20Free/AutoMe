@@ -68,5 +68,85 @@ function parse_text(textDom){
 	console.log(dict)
 }
 
+function call_api(text){
+	var xhttp = new XMLHttpRequest();
+	var url = "https://api.textrazor.com"
+	var body = "extractors=words&text="+text
 
-start()
+	xhttp.open("POST", url, true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.setRequestHeader("x-textrazor-key","891347e4cb02cafd44438f2df2337549c08c4da102061da01581d11a")
+	xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
+	xhttp.setRequestHeader("Access-Control-Allow-Credential", "*");
+	xhttp.setRequestHeader("Access-Control-Allow-Origin", "GET, POST, PATCH, PUT, DELETE, OPTIONS");
+	xhttp.setRequestHeader("Access-Control-Allow-Origin", "Origin, Content-Type, X-Auth-Token");
+
+	xhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+		  console.log(this.responseText)
+		}
+	};
+	xhttp.send(body);
+}
+
+function simulateKeyEvent() {
+	elem = document.getElementsByClassName('_5rpu')[0]
+	elem2 = elem.children[0]
+	elem3 = elem2.children[0]
+	elem4 = elem3.children[0]
+	elem5 = elem4.children[0]
+
+	elem6 = elem.parentElement
+	elem7 = elem6.parentElement
+	elem8 = elem7.parentElement
+
+	// elem.addEventListener("keypress", function(e){ console.log(e.key, e.char, e.keyCode) })
+	// elem2.addEventListener("keypress", function(e){ console.log(e.key, e.char, e.keyCode) })
+
+	console.log("typing..")
+	var evt = new KeyboardEvent("keydown", {
+		bubbles : false,
+		cancelable : false,
+		char : "q",
+		key : "q",
+		shiftKey : false,
+		keyCode : 113
+	});
+	var evt2 = new KeyboardEvent("keypress", {
+		bubbles : false,
+		cancelable : false,
+		char : "q",
+		key : "q",
+		shiftKey : false,
+		keyCode : 113
+	});
+	elem.dispatchEvent(evt);
+	elem.dispatchEvent(evt2);
+
+	elem2.dispatchEvent(evt);
+	elem2.dispatchEvent(evt2);
+
+	elem3.dispatchEvent(evt);
+	elem3.dispatchEvent(evt2);
+
+	elem4.dispatchEvent(evt);
+	elem4.dispatchEvent(evt2);
+
+	elem5.dispatchEvent(evt);
+	elem5.dispatchEvent(evt2);
+
+	elem6.dispatchEvent(evt);
+	elem6.dispatchEvent(evt2);
+
+	elem7.dispatchEvent(evt);
+	elem7.dispatchEvent(evt2);
+
+	elem8.dispatchEvent(evt);
+	elem8.dispatchEvent(evt2);
+
+	window.dispatchEvent(evt)
+	window.dispatchEvent(evt2);
+}
+setTimeout(simulateKeyEvent,3000)
+//call_api("My name is judah, i am a boy, boys are slow to grow hair, hair is different colors")
+//start()
